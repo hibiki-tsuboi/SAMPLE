@@ -10,3 +10,8 @@ Staff.delete_all
 staff = Staff.new(email: 'admin@admin.jp', password: 'admin00')
 staff.skip_confirmation!
 staff.save!
+
+Color.delete_all
+Color.create(name: 'Red')
+Color.create(name: 'Blue')
+Color.create(name: 'Yellow')
