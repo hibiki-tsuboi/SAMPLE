@@ -9,6 +9,11 @@
   </head>
 
   <body>
+  <% if staff_signed_in? %>
+      <%= link_to 'トップ', root_path %>
+      <%= link_to 'ログアウト', destroy_staff_session_path, method: :delete %>
+  <% else %>
+  <% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
