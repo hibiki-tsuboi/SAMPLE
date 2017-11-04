@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :contacts
   resources :colors
   # devise_for :staffs
   root to: 'home#index'

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>外部端子</h1>
+
+<table class='table table-striped table-hover table-bordered'>
+  <thead>
+    <tr>
+      <th><div class="text-center">名前</div></th>
+      <th><div class="text-center">備考</div></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= contact.name %></td>
+        <td><%= contact.note %></td>
+        <td><%= link_to BUTTON[:SHOW_NAME], contact, class: 'btn btn-primary' %></td>
+        <td><%= link_to BUTTON[:EDIT_NAME], edit_contact_path(contact), class: 'btn btn-primary' %></td>
+        <td><%= link_to BUTTON[:DELETE_NAME], contact, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-primary' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to BUTTON[:CREATE_NAME], new_contact_path, class: 'btn btn-primary' %>

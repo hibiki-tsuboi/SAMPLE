@@ -15,3 +15,8 @@ Color.delete_all
 Color.create(name: 'Red')
 Color.create(name: 'Blue')
 Color.create(name: 'Yellow')
+
+Contact.delete_all
+Contact.create(name: 'USB-C')
+Contact.create(name: 'HDMI')
+Contact.create(name: 'Mini DisplayPort')
