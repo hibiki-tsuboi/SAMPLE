@@ -2,5 +2,5 @@
 
 <%= render 'form', color: @color %>
 
-<%= link_to 'Show', @color %> |
-<%= link_to 'Back', colors_path %>
+<%= link_to BUTTON[:SHOW_NAME], @color, class: 'btn btn-primary' %>
+<%= link_to BUTTON[:RETURN_NAME], colors_path, class: 'btn btn-primary' %>

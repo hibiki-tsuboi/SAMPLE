@@ -1,29 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Colors</h1>
+<h1>カラー</h1>
 
-<table>
+<table class='table table-striped table-hover table-bordered'>
   <thead>
-    <tr>
-      <th>Name</th>
-      <th>Note</th>
-      <th colspan="3"></th>
-    </tr>
+  <tr>
+    <th><div class="text-center">名前</div></th>
+    <th><div class="text-center">備考</div></th>
+    <th colspan="3"></th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @colors.each do |color| %>
+  <% @colors.each do |color| %>
       <tr>
         <td><%= color.name %></td>
         <td><%= color.note %></td>
-        <td><%= link_to 'Show', color %></td>
-        <td><%= link_to 'Edit', edit_color_path(color) %></td>
-        <td><%= link_to 'Destroy', color, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to BUTTON[:SHOW_NAME], color, class: 'btn btn-primary' %></td>
+        <td><%= link_to BUTTON[:EDIT_NAME], edit_color_path(color), class: 'btn btn-primary' %></td>
+        <td><%= link_to BUTTON[:DELETE_NAME], color, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-primary' %></td>
       </tr>
-    <% end %>
+  <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Color', new_color_path %>
+<%= link_to BUTTON[:CREATE_NAME], new_color_path, class: 'btn btn-primary' %>
