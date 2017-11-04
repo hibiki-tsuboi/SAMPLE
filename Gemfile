@@ -59,6 +59,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # 認証システム
 gem 'devise'
+gem 'devise-i18n'
 
 # 検索機能
 gem 'ransack'
