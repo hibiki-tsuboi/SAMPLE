@@ -2,6 +2,8 @@ class Item < ApplicationRecord
   belongs_to :color
   belongs_to :contact
 
+  mount_uploader :image, ImageUploader
+
   # 必須チェック
   validates :series, presence: true
   validates :type_number, presence: true

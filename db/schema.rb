@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20171104142929) do
     t.text "special"
     t.integer "color_id", null: false
     t.integer "contact_id", null: false
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["color_id"], name: "index_items_on_color_id"

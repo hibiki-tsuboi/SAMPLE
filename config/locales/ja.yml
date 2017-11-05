@@ -16,6 +16,7 @@ ja:
         special: 特徴
         color_id: カラー
         contact_id: 外部端子
+        image: 画像
       color:
         name: 名前
         note: 備考

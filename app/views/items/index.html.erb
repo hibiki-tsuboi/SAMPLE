@@ -54,6 +54,9 @@
     <th>
       <div class="text-center">外部端子</div>
     </th>
+    <th>
+      <div class="text-center">画像</div>
+    </th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -69,6 +72,7 @@
         <td><%= item.special %></td>
         <td><%= item.color.name %></td>
         <td><%= item.contact.name %></td>
+        <td><%= item.image %></td>
         <td><%= link_to BUTTON[:SHOW_NAME], item, class: 'btn btn-primary' %></td>
         <td><%= link_to BUTTON[:EDIT_NAME], edit_item_path(item), class: 'btn btn-primary' %></td>
         <td><%= link_to BUTTON[:DELETE_NAME], item, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-primary' %></td>

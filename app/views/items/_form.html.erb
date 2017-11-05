@@ -84,6 +84,34 @@
     </div>
 
     <div class='form-group'>
+      <label class="col-sm-3 control-label">
+        <%= form.label :image %><br>
+      </label>
+      <div class='col-sm-9'>
+        <% if item.image? %>
+            <div class="thumbnail">
+              <%= image_tag item.image.url %>
+            </div>
+        <% end %>
+        <%= form.file_field :image %>
+        <%= form.hidden_field :image_cache %>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <div class='col-sm-offset-3 col-sm-9'>
+        <% if item.persisted? && item.image? %>
+            <div class="checkbox">
+              <label>
+                <%= form.check_box :remove_image %>
+                画像を削除
+              </label>
+            </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class='form-group'>
       <div class='col-sm-offset-3 col-sm-9'>
         <%= form.submit class: 'btn btn-success' %>
       </div>

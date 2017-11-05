@@ -71,7 +71,7 @@ class ItemsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def item_params
-    params.require(:item).permit(:series, :type_number, :item_name, :tax_excluded, :tax_included, :special, :color_id, :contact_id)
+    params.require(:item).permit(:series, :type_number, :item_name, :tax_excluded, :tax_included, :special, :color_id, :contact_id, :image, :image_cache, :remove_image)
   end
 
   def id_pulldown

@@ -9,6 +9,7 @@ class CreateItems < ActiveRecord::Migration[5.1]
       t.text :special
       t.references :color, foreign_key: true, null: false
       t.references :contact, foreign_key: true, null: false
+      t.string :image
 
       t.timestamps
     end

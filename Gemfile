@@ -64,3 +64,8 @@ gem 'devise'
 
 # 検索機能
 gem 'ransack'
+
+# 画像アップロード
+gem 'carrierwave'
+# gem 'rmagick'
+gem 'mini_magick'
