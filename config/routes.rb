@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :items
   resources :contacts
   resources :colors
   # devise_for :staffs

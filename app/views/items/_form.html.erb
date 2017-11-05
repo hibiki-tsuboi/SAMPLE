@@ -1,0 +1,92 @@
+<%= form_with(model: item, local: true, html: {class: 'form-horizontal'}) do |form| %>
+    <% if item.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+          <ul>
+            <% item.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class='form-group'>
+      <label class="col-sm-3 control-label">
+        <%= form.label :series %>
+      </label>
+      <div class='col-sm-9'>
+        <%= form.text_field :series, id: :item_series, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <label class="col-sm-3 control-label">
+        <%= form.label :type_number %>
+      </label>
+      <div class='col-sm-9'>
+        <%= form.text_field :type_number, id: :item_type_number, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <label class="col-sm-3 control-label">
+        <%= form.label :item_name %>
+      </label>
+      <div class='col-sm-9'>
+        <%= form.text_field :item_name, id: :item_item_name, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <label class="col-sm-3 control-label">
+        <%= form.label :tax_excluded %>
+      </label>
+      <div class='col-sm-9'>
+        <%= form.number_field :tax_excluded, id: :item_tax_excluded, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <label class="col-sm-3 control-label">
+        <%= form.label :tax_included %>
+      </label>
+      <div class='col-sm-9'>
+        <%= form.number_field :tax_included, id: :item_tax_included, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <label class="col-sm-3 control-label">
+        <%= form.label :special %>
+      </label>
+      <div class='col-sm-9'>
+        <%= form.text_area :special, id: :item_special, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <label class="col-sm-3 control-label">
+        <%= form.label :color_id %>
+      </label>
+      <div class='col-sm-9'>
+        <%= form.select(:color_id, @colors.map { |c| [c.name, c.id] }, {}, class: 'form-control') %>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <label class="col-sm-3 control-label">
+        <%= form.label :contact_id %>
+      </label>
+      <div class='col-sm-9'>
+        <%= form.select(:contact_id, @contacts.map { |c| [c.name, c.id] }, {}, class: 'form-control') %>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <div class='col-sm-offset-3 col-sm-9'>
+        <%= form.submit class: 'btn btn-success' %>
+      </div>
+    </div>
+
+<% end %>

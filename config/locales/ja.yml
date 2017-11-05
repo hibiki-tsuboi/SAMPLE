@@ -7,6 +7,15 @@ ja:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
     attributes:
+      item:
+        series: シリーズ名
+        type_number: 型番
+        item_name: 商品名
+        tax_excluded: 税抜き価格
+        tax_included: 税込み価格
+        special: 特徴
+        color_id: カラー
+        contact_id: 外部端子
       color:
         name: 名前
         note: 備考
