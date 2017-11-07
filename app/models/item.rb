@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
   belongs_to :color
-  belongs_to :contact
+  has_many :item_contacts, dependent: :destroy
+  has_many :contacts, :through => :item_contacts
 
   mount_uploader :image, ImageUploader
 

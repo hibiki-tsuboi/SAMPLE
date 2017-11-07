@@ -71,7 +71,7 @@
         <td><%= item.tax_included %></td>
         <td><%= item.special %></td>
         <td><%= item.color.name %></td>
-        <td><%= item.contact.name %></td>
+        <td><%= contact_name_join(item) %></td>
         <td><%= item.image %></td>
         <td><%= link_to BUTTON[:SHOW_NAME], item, class: 'btn btn-primary' %></td>
         <td><%= link_to BUTTON[:EDIT_NAME], edit_item_path(item), class: 'btn btn-primary' %></td>

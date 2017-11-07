@@ -76,10 +76,14 @@
 
     <div class='form-group'>
       <label class="col-sm-3 control-label">
-        <%= form.label :contact_id %>
+        外部端子
       </label>
       <div class='col-sm-9'>
-        <%= form.select(:contact_id, @contacts.map {|c| [c.name, c.id]}, {}, class: 'form-control') %>
+        <div class="check_box">
+          <%= form.collection_check_boxes(:contact_ids, Contact.all, :id, :name) do |b| %>
+              <%= b.label(class: 'checkbox-inline') {b.check_box + b.text} %>
+          <% end %>
+        </div>
       </div>
     </div>
 
