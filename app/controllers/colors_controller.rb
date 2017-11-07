@@ -1,5 +1,6 @@
 class ColorsController < ApplicationController
   before_action :set_color, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_staff!
 
   # GET /colors
   # GET /colors.json
