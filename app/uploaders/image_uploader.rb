@@ -2,6 +2,8 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
+
+  # リサイズしたり画像形式を変更するのに必要
   include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
@@ -29,11 +31,13 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
+  # 画像の上限を設定する
   process :resize_to_fit => [800, 800]
 
   # Create different versions of your uploaded files:
+  # サムネイル画像の上限を設定する
   version :thumb do
-    process resize_to_fit: [200, 200]
+    process resize_to_fit: [100, 100]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

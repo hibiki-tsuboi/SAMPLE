@@ -2,10 +2,10 @@
 
 # ボタン名
 BUTTON = {
-    CREATE_NAME: '作成',
-    SHOW_NAME: '詳細',
-    EDIT_NAME: '更新',
+    CREATE_NAME: '新規登録',
+    SHOW_NAME: 'プレビュー',
+    EDIT_NAME: '変更',
     DELETE_NAME: '削除',
     RETURN_NAME: '戻る',
-    UPDATE_NAME: '更新'
+    UPDATE_NAME: '変更'
 }

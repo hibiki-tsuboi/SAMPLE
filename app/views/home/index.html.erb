@@ -1,9 +1,15 @@
 <h1>管理画面</h1>
 <hr>
 
-<%= link_to '商品検索', items_path, class: 'btn btn-primary' %>
-<hr>
-<%= link_to 'カラー管理', colors_path, class: 'btn btn-primary' %>
-<hr>
-<%= link_to '外部端子管理', contacts_path, class: 'btn btn-primary' %>
-<hr>
+<%= link_to '商品登録', new_item_path, class: 'btn btn-primary' %>
+<br><br>
+<%= link_to '商品一覧表', items_path, class: 'btn btn-primary' %>
+<br><br><br><br><br><br><br><br>
+<div class="panel panel-default">
+  <div class="panel-heading">項目変更</div>
+  <div class="panel-body">
+    <%= link_to 'カラー', colors_path, class: 'btn btn-primary' %>
+    <br><br>
+    <%= link_to '外部端子', contacts_path, class: 'btn btn-primary' %>
+  </div>
+</div>
