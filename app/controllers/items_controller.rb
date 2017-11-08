@@ -78,7 +78,5 @@ class ItemsController < ApplicationController
   def id_pulldown
     # カラー
     @colors = Color.all
-    # 外部端子
-    @contacts = Contact.all
   end
 end
