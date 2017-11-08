@@ -3,7 +3,7 @@ class Staffs::SessionsController < Devise::SessionsController
 
   # ログイン後の遷移先
   def after_sign_in_path_for(resource)
-    root_path
+    items_path
   end
 
   # ログアウト後の遷移先
