@@ -37,14 +37,14 @@
   <div class='form-group'>
     <label class="col-sm-2 control-label">税抜き価格</label>
     <div class='col-sm-10'>
-      <p class="form-control-static"><%= @item.tax_excluded %></p>
+      <p class="form-control-static"><%= number_to_currency(@item.tax_excluded, unit: '¥', format: '%u%n', precision: 0) %></p>
     </div>
   </div>
 
   <div class='form-group'>
     <label class="col-sm-2 control-label">税込み価格</label>
     <div class='col-sm-10'>
-      <p class="form-control-static"><%= @item.tax_included %></p>
+      <p class="form-control-static"><%= number_to_currency(@item.tax_included, unit: '¥', format: '%u%n', precision: 0) %></p>
     </div>
   </div>
 
