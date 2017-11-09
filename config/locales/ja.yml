@@ -19,10 +19,10 @@ ja:
         image: 画像
       color:
         name: 名前
-        note: 備考
+        note: メモ
       contact:
         name: 名前
-        note: 備考
+        note: メモ
 
   date:
     abbr_day_names:

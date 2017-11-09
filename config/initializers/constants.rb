@@ -2,7 +2,7 @@
 
 # ボタン名
 BUTTON = {
-    CREATE_NAME: '新規登録',
+    CREATE_NAME: '項目追加',
     SHOW_NAME: 'プレビュー',
     EDIT_NAME: '変更',
     DELETE_NAME: '削除',

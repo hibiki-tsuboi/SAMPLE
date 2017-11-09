@@ -25,7 +25,7 @@ module ApplicationHelper
       html = html + %Q(<li><a href="#{path}">#{text}</a></li>)
     end
     html = html + %Q(<hr>)
-    html = html + %Q(<li><span class="glyphicon glyphicon-cog" style="margin-left:5px;"><b>管理</b></span></li><br>)
+    html = html + %Q(<li><span class="glyphicon glyphicon-cog" style="margin-left:5px;"><b>仕様項目</b></span></li><br>)
 
     admin_items = [
         {:text => 'カラー', :path => colors_path},

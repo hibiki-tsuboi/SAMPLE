@@ -1,6 +1,9 @@
-<h1>Editing Color</h1>
-
+<div class="panel panel-primary">
+  <div class="panel-heading">カラー</div>
+</div>
 <%= render 'form', color: @color %>
 
-<%= link_to BUTTON[:SHOW_NAME], @color, class: 'btn btn-primary' %>
+<% if false %>
+    <%= link_to BUTTON[:SHOW_NAME], @color, class: 'btn btn-primary' %>
+<% end %>
 <%= link_to BUTTON[:RETURN_NAME], colors_path, class: 'btn btn-primary' %>

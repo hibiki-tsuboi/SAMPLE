@@ -1,27 +1,34 @@
-<h1>外部端子</h1>
-
-<table class='table table-striped table-hover table-bordered'>
+<div class="panel panel-primary">
+  <div class="panel-heading">外部端子</div>
+</div>
+<table class='table table-hover table-bordered table-condensed'>
   <thead>
-    <tr>
-      <th><div class="text-center">名前</div></th>
-      <th><div class="text-center">備考</div></th>
-      <th colspan="3"></th>
-    </tr>
+  <tr class="active">
+    <th>
+      <div class="text-center">名前</div>
+    </th>
+    <th>
+      <div class="text-center">メモ</div>
+    </th>
+    <th colspan="2" style="width:1%"></th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @contacts.each do |contact| %>
+  <% @contacts.each do |contact| %>
       <tr>
         <td><%= contact.name %></td>
         <td><%= contact.note %></td>
-        <td><%= link_to BUTTON[:SHOW_NAME], contact, class: 'btn btn-primary' %></td>
+        <% if false %>
+            <td><%= link_to BUTTON[:SHOW_NAME], contact, class: 'btn btn-primary' %></td>
+        <% end %>
         <td><%= link_to BUTTON[:EDIT_NAME], edit_contact_path(contact), class: 'btn btn-primary' %></td>
         <td><%= link_to BUTTON[:DELETE_NAME], contact, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-primary' %></td>
       </tr>
-    <% end %>
+  <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to BUTTON[:CREATE_NAME], new_contact_path, class: 'btn btn-primary' %>
+<%= link_to BUTTON[:CREATE_NAME], new_contact_path, class: 'btn btn-danger' %>
