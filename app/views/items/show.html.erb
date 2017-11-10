@@ -54,7 +54,7 @@
   <div class='form-group'>
     <label class="col-sm-2 control-label">特徴</label>
     <div class='col-sm-10'>
-      <p class="form-control-static"><%= @item.special %></p>
+      <%= simple_format(@item.special, class: 'form-control-static') %>
     </div>
   </div>
 

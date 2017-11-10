@@ -23,7 +23,7 @@
             <td><%= link_to BUTTON[:SHOW_NAME], contact, class: 'btn btn-primary' %></td>
         <% end %>
         <td><%= link_to BUTTON[:EDIT_NAME], edit_contact_path(contact), class: 'btn btn-primary' %></td>
-        <td><%= link_to BUTTON[:DELETE_NAME], contact, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-primary' %></td>
+        <td><%= link_to BUTTON[:DELETE_NAME], contact, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' %></td>
       </tr>
   <% end %>
   </tbody>
@@ -31,4 +31,4 @@
 
 <br>
 
-<%= link_to BUTTON[:CREATE_NAME], new_contact_path, class: 'btn btn-danger' %>
+<%= link_to BUTTON[:CREATE_NAME], new_contact_path, class: 'btn btn-primary' %>
