@@ -1,0 +1,44 @@
+<table width="100%">
+  <tbody>
+  <tr>
+    <td colspan="2">オンデマインドシステムズ　<%= @item.series %></td>
+  </tr>
+  <tr>
+    <td colspan="2"><h2><%= @item.item_name %></h2></td>
+  </tr>
+  <tr>
+    <td>
+      <% if @item.image? %>
+          <%= image_tag(@item.image.url, width: '400') %>
+      <% end %>
+    </td>
+    <!--<td><img src="product1.png" width="400" height="266" alt=""/></td>-->
+    <td>
+      <table width="100%">
+        <tbody>
+        <tr>
+          <td>型番</td>
+          <td><%= @item.type_number %></td>
+        </tr>
+        <tr>
+          <td>特長</td>
+          <td><%= simple_format(@item.special) %></td>
+        </tr>
+        <tr>
+          <td>価格</td>
+          <td><%= number_to_currency(@item.tax_included) %>（税込）</td>
+        </tr>
+        <tr>
+          <td>カラー</td>
+          <td><%= @item.color.name %></td>
+        </tr>
+        <tr>
+          <td>外部端子</td>
+          <td><%= contact_name_join(@item) %></td>
+        </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+  </tbody>
+</table>

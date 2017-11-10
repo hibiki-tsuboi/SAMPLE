@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  # フロント画面
+  get 'demo', to: 'demo#index'
+
+  # 管理画面
   resources :items
   resources :contacts
   resources :colors

@@ -18,15 +18,17 @@ ItemContact.delete_all
 Item.delete_all
 
 Color.delete_all
-Color.create(name: 'Red')
-Color.create(name: 'Blue')
-Color.create(name: 'Yellow')
+Color.create(name: 'ブラック')
+Color.create(name: 'ブルー')
+Color.create(name: 'レッド')
 
 Contact.delete_all
-Contact.create(name: 'USB-C')
-Contact.create(name: 'HDMI')
-Contact.create(name: 'Mini DisplayPort')
+Contact.create(name: 'WAN×1')
+Contact.create(name: 'LAN×8')
+Contact.create(name: 'USB-C×3')
 
-Item.create(series: 'xxx', type_number: 'A001', item_name: '○○商品', tax_excluded: 1000, tax_included: 1080, special: '備考A', color_id: Color.all.first.id + 0)
-Item.create(series: 'xxx', type_number: 'B001', item_name: '××商品', tax_excluded: 2000, tax_included: 2160, special: '備考B', color_id: Color.all.first.id + 1)
-Item.create(series: 'yyy', type_number: 'B001', item_name: '△△商品', tax_excluded: 3000, tax_included: 3240, special: '備考C', color_id: Color.all.first.id + 2)
+Item.create(series: '高速Wi-Fiシリーズ', type_number: 'RT-DB1000X', item_name: '高性能デュアルバンドWi-Fiギガビットルーター', tax_excluded: 27000, tax_included: 29160,
+            special: "- IEEE802.11ac/n/a/g/b対応\n- 5GHzと2.4GHzのデュアルバンド対応\n- NitroQAM技術への対応で最大2,167Mbpsの高速接続が可能\n- 同時に複数の機器と通信できるMU-MIMO技術に対応",
+            color_id: Color.all.first.id + 0)
+Item.create(series: '高速Wi-Fiシリーズ', type_number: 'RT-DB1000X', item_name: '高性能デュアルバンドWi-Fiメガビットルーター', tax_excluded: 25000, tax_included: 27000, special: '備考B', color_id: Color.all.first.id + 1)
+Item.create(series: '高速Wi-Fiシリーズ', type_number: 'RT-DB1200X', item_name: '高性能デュアルバンドWi-Fiテラビットルーター', tax_excluded: 20000, tax_included: 21600, special: '備考C', color_id: Color.all.first.id + 2)
