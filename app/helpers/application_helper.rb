@@ -13,7 +13,7 @@ module ApplicationHelper
   # サイドメニューの項目を出力する
   def sidebar_list_items
     items = [
-        {:text => '商品登録', :path => new_item_path},
+        {:text => '新規登録', :path => new_item_path},
         {:text => '商品一覧表', :path => items_path}
     ]
 
