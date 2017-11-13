@@ -2,6 +2,6 @@ class DemoController < ApplicationController
   layout 'front'
 
   def index
-    @item = Item.all.first
+    @items = Item.all
   end
 end
