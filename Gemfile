@@ -12,7 +12,7 @@ gem 'rails', '~> 5.1.4'
 #  ローカル環境（Sqlite用）
 gem 'sqlite3'
 #  ローカル環境（MySQL用）
-# gem 'mysql2'
+gem 'mysql2'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 gem 'bootstrap-sass', '~> 3.3.7'

@@ -12,44 +12,44 @@
 
 ActiveRecord::Schema.define(version: 20171107122059) do
 
-  create_table "colors", force: :cascade do |t|
+  create_table "colors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
     t.string "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "contacts", force: :cascade do |t|
+  create_table "contacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
     t.string "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "item_contacts", force: :cascade do |t|
-    t.integer "item_id"
-    t.integer "contact_id"
+  create_table "item_contacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "item_id"
+    t.bigint "contact_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["contact_id"], name: "index_item_contacts_on_contact_id"
     t.index ["item_id"], name: "index_item_contacts_on_item_id"
   end
 
-  create_table "items", force: :cascade do |t|
+  create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "series", null: false
     t.string "type_number", null: false
     t.string "item_name", null: false
     t.integer "tax_excluded", null: false
     t.integer "tax_included", null: false
     t.text "special"
-    t.integer "color_id", null: false
+    t.bigint "color_id", null: false
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["color_id"], name: "index_items_on_color_id"
   end
 
-  create_table "staffs", force: :cascade do |t|
+  create_table "staffs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -75,4 +75,7 @@ ActiveRecord::Schema.define(version: 20171107122059) do
     t.index ["unlock_token"], name: "index_staffs_on_unlock_token", unique: true
   end
 
+  add_foreign_key "item_contacts", "contacts"
+  add_foreign_key "item_contacts", "items"
+  add_foreign_key "items", "colors"
 end
