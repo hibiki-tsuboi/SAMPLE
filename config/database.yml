@@ -12,10 +12,11 @@ default: &default
 development:
   <<: *default
 
-#  ローカル環境（Sqlite用）
+#  Sqlite用
+#  adapter: sqlite3
 #  database: db/development.sqlite3
 
-#  ローカル環境（MySQL用）
+#  MySQL用
   adapter: mysql2
   database: sample
   socket: /tmp/mysql.sock
