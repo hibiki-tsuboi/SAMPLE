@@ -63,8 +63,7 @@
     </div>
 <% else %>
     <div class='container'>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <%= yield :stylesheets %>
       <%= yield %>
     </div>
 <% end %>
