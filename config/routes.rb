@@ -7,8 +7,7 @@ Rails.application.routes.draw do
   resources :items
   resources :contacts
   resources :colors
-  # devise_for :staffs
-  root to: 'home#index'
+  root to: 'items#index'
   devise_for :staffs, controllers: {
       confirmations: 'staffs/confirmations',
       passwords:     'staffs/passwords',
