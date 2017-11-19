@@ -42,10 +42,20 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <% if flash[:notice] %>
-              <div class="alert alert-info"><%= flash[:notice] %></div>
+              <div class="alert alert-info alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-label="閉じる">
+                  <span aria-hidden="true">×</span>
+                </button>
+                <%= flash[:notice] %>
+              </div>
           <% end %>
           <% if flash[:error] %>
-              <div class="alert alert-danger"><%= flash[:error] %></div>
+              <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-label="閉じる">
+                  <span aria-hidden="true">×</span>
+                </button>
+                <%= flash[:error] %>
+              </div>
           <% end %>
           <%= yield %>
         </div>
@@ -53,6 +63,8 @@
     </div>
 <% else %>
     <div class='container'>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
 <% end %>
