@@ -65,3 +65,9 @@ set :stage, :production
 role :app, %w{localhost}
 role :web, %w{localhost}
 role :db, %w{localhost}
+set :ssh_options, {
+    keys: %w(/home/hibiki/.ssh/id_rsa),
+    forward_agent: false,
+    user: 'user'
+    # auth_methods: %w(password)
+}
