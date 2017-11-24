@@ -9,7 +9,6 @@ set :repo_url, "git@github.com:hibiki-tsuboi/SAMPLE.git"
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/var/www/SAMPLE"
-set :scm, :git
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
