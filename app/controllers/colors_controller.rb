@@ -29,11 +29,13 @@ class ColorsController < ApplicationController
 
     respond_to do |format|
       if @color.save
-        format.html { redirect_to @color, notice: 'Color was successfully created.' }
-        format.json { render :show, status: :created, location: @color }
+        flash.now[:alert] = "create"
+        # format.html { redirect_to @color, notice: 'Color was successfully created.' }
+        format.html {render :new}
+        format.json {render :show, status: :created, location: @color}
       else
-        format.html { render :new }
-        format.json { render json: @color.errors, status: :unprocessable_entity }
+        format.html {render :new}
+        format.json {render json: @color.errors, status: :unprocessable_entity}
       end
     end
   end
@@ -43,11 +45,13 @@ class ColorsController < ApplicationController
   def update
     respond_to do |format|
       if @color.update(color_params)
-        format.html { redirect_to @color, notice: 'Color was successfully updated.' }
-        format.json { render :show, status: :ok, location: @color }
+        flash.now[:alert] = "update"
+        # format.html { redirect_to @color, notice: 'Color was successfully updated.' }
+        format.html {render :edit}
+        format.json {render :show, status: :ok, location: @color}
       else
-        format.html { render :edit }
-        format.json { render json: @color.errors, status: :unprocessable_entity }
+        format.html {render :edit}
+        format.json {render json: @color.errors, status: :unprocessable_entity}
       end
     end
   end
@@ -57,19 +61,19 @@ class ColorsController < ApplicationController
   def destroy
     @color.destroy
     respond_to do |format|
-      format.html { redirect_to colors_url, notice: 'Color was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html {redirect_to colors_url, notice: 'Color was successfully destroyed.'}
+      format.json {head :no_content}
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_color
-      @color = Color.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_color
+    @color = Color.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def color_params
-      params.require(:color).permit(:name, :note)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def color_params
+    params.require(:color).permit(:name, :note)
+  end
 end

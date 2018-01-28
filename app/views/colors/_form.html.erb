@@ -1,38 +1,51 @@
 <%= form_with(model: color, local: true, html: {class: 'form-horizontal'}) do |form| %>
-    <% if color.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(color.errors.count, "error") %> prohibited this color from being saved:</h2>
+  <% if color.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(color.errors.count, "error") %> prohibited this color from being saved:</h2>
 
-          <ul>
-            <% color.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-    <% end %>
-
-    <div class='form-group'>
-      <label class="col-sm-2 control-label">
-        <%= form.label :name %>
-      </label>
-      <div class='col-sm-10'>
-        <%= form.text_field :name, id: :color_name, class: 'form-control' %>
-      </div>
+      <ul>
+        <% color.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
     </div>
+  <% end %>
 
-    <div class='form-group'>
-      <label class="col-sm-2 control-label">
-        <%= form.label :note %>
-      </label>
-      <div class='col-sm-10'>
-        <%= form.text_field :note, id: :color_note, class: 'form-control' %>
-      </div>
+  <div class='form-group'>
+    <label class="col-sm-2 control-label">
+      <%= form.label :name %>
+    </label>
+    <div class='col-sm-10'>
+      <%= form.text_field :name, id: :color_name, class: 'form-control' %>
     </div>
+  </div>
 
-    <div class='form-group'>
-      <div class='col-sm-offset-2 col-sm-10'>
-        <%= form.submit class: 'btn btn-success' %>
-      </div>
+  <div class='form-group'>
+    <label class="col-sm-2 control-label">
+      <%= form.label :note %>
+    </label>
+    <div class='col-sm-10'>
+      <%= form.text_field :note, id: :color_note, class: 'form-control' %>
     </div>
+  </div>
 
+  <div class='form-group'>
+    <div class='col-sm-offset-2 col-sm-10'>
+      <%= form.submit class: 'btn btn-success' %>
+    </div>
+  </div>
+
+<% end %>
+
+<div id="product-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
+<% if flash[:alert] == "create" %>
+  <script>
+      $("#product-modal").html("<%= escape_javascript(render 'modal_create') %>")
+      $("#product-modal").modal("show")
+  </script>
+<% elsif flash[:alert] == "update" %>
+  <script>
+      $("#product-modal").html("<%= escape_javascript(render 'modal_update') %>")
+      $("#product-modal").modal("show")
+  </script>
 <% end %>
