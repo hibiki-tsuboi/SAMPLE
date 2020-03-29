@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.0'
+ruby '2.6.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
@@ -9,7 +9,7 @@ gem 'rails'
 #  ローカル環境（Sqlite用）
 gem 'sqlite3'
 #  ローカル環境（MySQL用）
-gem 'mysql2'
+# gem 'mysql2'
 # Use Puma as the app server
 gem 'puma'
 gem 'bootstrap-sass'

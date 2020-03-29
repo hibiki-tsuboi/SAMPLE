@@ -2,54 +2,54 @@
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
-# Note that this schema.rb definition is the authoritative source for your
-# database schema. If you need to create the application database on another
-# system, you should be using db:schema:load, not running all the migrations
-# from scratch. The latter is a flawed and unsustainable approach (the more migrations
-# you'll amass, the slower it'll run and the greater likelihood for issues).
+# This file is the source Rails uses to define your schema when running `rails
+# db:schema:load`. When creating a new database, `rails db:schema:load` tends to
+# be faster and is potentially less error prone than running all of your
+# migrations from scratch. Old migrations may fail to apply correctly if those
+# migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171107122059) do
+ActiveRecord::Schema.define(version: 2017_11_07_122059) do
 
-  create_table "colors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "colors", force: :cascade do |t|
     t.string "name", null: false
     t.string "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "contacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "contacts", force: :cascade do |t|
     t.string "name", null: false
     t.string "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "item_contacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "item_id"
-    t.bigint "contact_id"
+  create_table "item_contacts", force: :cascade do |t|
+    t.integer "item_id"
+    t.integer "contact_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["contact_id"], name: "index_item_contacts_on_contact_id"
     t.index ["item_id"], name: "index_item_contacts_on_item_id"
   end
 
-  create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "items", force: :cascade do |t|
     t.string "series", null: false
     t.string "type_number", null: false
     t.string "item_name", null: false
     t.integer "tax_excluded", null: false
     t.integer "tax_included", null: false
     t.text "special"
-    t.bigint "color_id", null: false
+    t.integer "color_id", null: false
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["color_id"], name: "index_items_on_color_id"
   end
 
-  create_table "staffs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "staffs", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

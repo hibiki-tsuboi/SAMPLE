@@ -13,16 +13,16 @@ development:
   <<: *default
 
 #  Sqlite用
-#  adapter: sqlite3
-#  database: db/development.sqlite3
+  adapter: sqlite3
+  database: db/development.sqlite3
 
 #  MySQL用
-  adapter: mysql2
-  database: sample
-  socket: /tmp/mysql.sock
-  host: localhost
-  username: dev
-  password: dev
+#  adapter: mysql2
+#  database: sample
+#  socket: /tmp/mysql.sock
+#  host: localhost
+#  username: dev
+#  password: dev
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
